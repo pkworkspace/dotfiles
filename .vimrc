@@ -17,6 +17,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'Raimondi/delimitMate'
+" Bundle 'jiangmiao/auto-pairs'
 Bundle 'tomtom/tcomment_vim'
 " Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'Lokaltog/vim-powerline'
@@ -25,6 +26,8 @@ Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-ragtag'
 
 " Ruby stuff
 set nocompatible
@@ -33,15 +36,12 @@ filetype plugin indent on
 
 augroup myfiletypes
 	autocmd!
-	autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+	autocmd FileType coffee,ruby,eruby,yaml set ai sw=2 sts=2 et
 augroup END
 
 " Ruby Complete
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-" "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
 " Key Bindings
@@ -66,6 +66,12 @@ map <Leader>ett a<%= text_field_tag x %><Esc>Fxxi
 map <Leader>fr ^l"ayt/^v$h"byu:vsp<CR>:args `ack -l <C-R>a`<CR>:argdo %s<C-R>bge \| update<CR>
 " Same as above but asks before all the changes.
 map <Leader>far ^l"ayt/^v$h"byu:vsp<CR>:args `ack -l <C-R>a`<CR>:argdo %s<C-R>bgce \| update<CR>
+" Git Bindings
+map <Leader>ga :!git add -A<CR>
+map <Leader>gcm :!git commit -am ""<LEFT>
+map <Leader>gp :!git push<CR>
+map <Leader>gu :!git pull<CR>
+map <Leader>g :Git 
 
 " Other settings
 let g:ctrlp_custom_ignore = '\v\.(jpeg|jpg|JPG|png)$'
@@ -83,3 +89,4 @@ set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
+set shellcmdflag=-c " Uses bash settings from terminal: use -i for interactive
