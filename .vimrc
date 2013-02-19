@@ -19,7 +19,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'Raimondi/delimitMate'
 " Bundle 'jiangmiao/auto-pairs'
 Bundle 'tomtom/tcomment_vim'
-" Bundle 'vim-scripts/HTML-AutoCloseTag'
+Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'koron/nyancat-vim'
 Bundle 'ap/vim-css-color'
@@ -72,6 +72,11 @@ map <Leader>gcm :!git commit -am ""<LEFT>
 map <Leader>gp :!git push<CR>
 map <Leader>gu :!git pull<CR>
 map <Leader>g :Git 
+" Add new line on enter
+map <S-Enter> mnO<Esc>`n
+map <CR> mno<Esc>`n
+map <TAB> ==
+vmap <TAB> =
 
 " Other settings
 let g:ctrlp_custom_ignore = '\v\.(jpeg|jpg|JPG|png)$'
@@ -89,4 +94,6 @@ set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
-set shellcmdflag=-c " Uses bash settings from terminal: use -i for interactive
+set shellcmdflag=-ic " Uses bash settings from terminal. This makes vim suspend on startup in terminal vim though.
+nnoremap gfv :vert winc f<cr>
+nnoremap gfx :winc f<cr>
