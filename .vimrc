@@ -17,7 +17,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'othree/html5.vim'
-" Bundle 'Raimondi/delimitMate'
+Bundle 'Raimondi/delimitMate'
 " Bundle 'jiangmiao/auto-pairs'
 Bundle 'tomtom/tcomment_vim'
 " Bundle 'vim-scripts/HTML-AutoCloseTag'
@@ -28,7 +28,7 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kchmck/vim-coffee-script'
-" Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'nathanaelkane/vim-indent-guides'
 " Bundle 'Yggdroot/indentLine'
 
 " Ruby stuff
@@ -69,16 +69,16 @@ map <Leader>fr ^l"ayt/^v$h"byu:vsp<CR>:args `ack -l <C-R>a`<CR>:argdo %s<C-R>bge
 " Same as above but asks before all the changes.
 map <Leader>far ^l"ayt/^v$h"byu:vsp<CR>:args `ack -l <C-R>a`<CR>:argdo %s<C-R>bgce \| update<CR>
 " Git Bindings
-map <Leader>ga :!git add -A<CR>
-map <Leader>gcm :!git commit -am ""<LEFT>
-map <Leader>gp :!git push<CR>
-map <Leader>gu :!git pull<CR>
-map <Leader>g :Git 
+map <Leader>ga :Git add -A<CR>
+map <Leader>gcm :Git commit -am ""<LEFT>
+map <Leader>gp :Git push<CR>
+map <Leader>gu :Git pull<CR>
+map <Leader>g Git 
 " Add new line on enter
-" map <S-Enter> mnO<Esc>`n
-" map <CR> mno<Esc>`n
-" map <TAB> ==
-" vmap <TAB> =
+map <S-Enter> mnO<Esc>`n
+map <CR> mno<Esc>`n
+map <TAB> ==
+vmap <TAB> =
 
 " Other settings
 let g:ctrlp_custom_ignore = '\v\.(jpeg|jpg|JPG|png)$'
