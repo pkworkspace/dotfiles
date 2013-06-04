@@ -37,14 +37,15 @@ source $ZSH/oh-my-zsh.sh
 # export PATH=/Users/isaac/.rvm/gems/ruby-1.9.3-p286/bin:/usr/local/bin:/Users/isaac/.rvm/gems/ruby-1.9.3-p286@global/bin:/Users/isaac/.rvm/rubies/ruby-1.9.3-p286/bin:/Users/isaac/.rvm/bin:/usr/local/Cellar/ruby/1.9.2-p290/bin:/usr/local/Cellar/ruby/1.9.2-p290/lib/ruby/gems/1.9.1/gems/:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
 alias ga='git add -A'
-alias gc='git commit -a'
 alias gcm='git commit -a -m'
 alias gu='git pull'
 alias gp='git push'
 alias gcp='git cherry-pick'
-alias gco='git checkout'
-alias gb='git branch -a'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias gb='git branch'
 alias gss='git stash save'
 alias gsa='git stash apply'
 alias gsl='git stash lists'
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+eval "$(rbenv init -)"

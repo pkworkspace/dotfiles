@@ -1,3 +1,5 @@
 [user]
 	name = Isaac Sloan
 	email = isaac@isaacsloan.com
+[core]
+	editor = /usr/bin/vim

@@ -17,4 +17,8 @@ alias gsl='git stash lists'
 
 ##
 # Your previous /Users/isaac/.bash_profile file was backed up as /Users/isaac/.bash_profile.macports-saved_2011-07-22_at_14:48:35
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*
+eval "$(rbenv init -)"
+eval "$(rbenv init -)"
+eval "$(rbenv init -)"
+eval "$(rbenv init -)"
