@@ -82,6 +82,8 @@ vmap <TAB> =
 
 " Other settings
 let g:ctrlp_custom_ignore = '\v\.(jpeg|jpg|JPG|png)$'
+let g:ctrlp_working_path_mode = 'ra'
+
 colorscheme vividchalk 
 set number
 set nowrap

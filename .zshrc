@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+DISABLE_UPDATE_PROMPT=true
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -43,7 +44,6 @@ alias gp='git push'
 alias gcp='git cherry-pick'
 alias gc='git checkout'
 alias gcb='git checkout -b'
-alias gb='git branch'
 alias gss='git stash save'
 alias gsa='git stash apply'
 alias gsl='git stash lists'
