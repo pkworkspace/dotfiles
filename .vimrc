@@ -75,7 +75,7 @@ map <Leader>gp :Git push<CR>
 map <Leader>gu :Git pull<CR>
 map <Leader>g Git 
 " Add new line on enter
-map <S-Enter> mnO<Esc>`n
+map <S-CR> mnO<Esc>`n
 map <CR> mno<Esc>`n
 map <TAB> ==
 vmap <TAB> =

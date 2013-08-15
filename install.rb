@@ -1,5 +1,5 @@
 dotfilepath = File.expand_path(File.dirname(__FILE__))
-simlinkpath =  Dir.pwd
+simlinkpath =  "~"
 dotfilelist = Dir.entries(dotfilepath).select{|f| !%w(. .. .DS_Store .git .gitignore .gitconfig).include?(f)}.select{|f| !(f =~ /^\.\w/).nil?}
 backupdir = simlinkpath+"/dotfilebackup_"+Time.now.strftime("%Y%m%d%H%M%S")
 Dir.mkdir(backupdir)
