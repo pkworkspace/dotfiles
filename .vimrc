@@ -10,12 +10,15 @@ Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
+Bundle 'slim-template/vim-slim'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-endwise'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
+" Bundle 'mileszs/ack.vim'
+Bundle 'henrik/vim-qargs'
+Bundle 'rking/ag.vim'
 Bundle 'othree/html5.vim'
 Bundle 'Raimondi/delimitMate'
 " Bundle 'jiangmiao/auto-pairs'
@@ -26,15 +29,23 @@ Bundle 'koron/nyancat-vim'
 Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'Lokaltog/vim-easymotion'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'nathanaelkane/vim-indent-guides'
-" Bundle 'Yggdroot/indentLine'
+" Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Yggdroot/indentLine'
+" Bundle 'airblade/vim-gitgutter' # Makes everything slow i think.
+
+
+" Makes it so I can select within ruby blocks
+Bundle 'kana/vim-textobj-user'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+runtime macros/matchit.vim
 
 " Ruby stuff
 set nocompatible
 syntax enable
 filetype plugin indent on
+set autowrite
 
 augroup myfiletypes
 	autocmd!
@@ -65,14 +76,15 @@ map <Leader>elt a<%= label_tag x %><Esc>Fxxi
 map <Leader>est a<%= select_tag x %><Esc>Fxxi
 map <Leader>ett a<%= text_field_tag x %><Esc>Fxxi
 " Finds and replaces in files based on the the current line.
-map <Leader>fr ^l"ayt/^v$h"byu:vsp<CR>:args `ack -l <C-R>a`<CR>:argdo %s<C-R>bge \| update<CR>
+map <Leader>fr ^l"ayt/^v$h"byu:vsp<CR>:Ag "<C-R>a"<CR>:Qdo %s<C-R>bge \| update<CR>
 " Same as above but asks before all the changes.
-map <Leader>far ^l"ayt/^v$h"byu:vsp<CR>:args `ack -l <C-R>a`<CR>:argdo %s<C-R>bgce \| update<CR>
+map <Leader>far ^l"ayt/^v$h"byu:vsp<CR>:Ag "<C-R>a"<CR>:Qdo %s<C-R>bgce \| update<CR>
 " Git Bindings
 map <Leader>ga :Git add -A<CR>
 map <Leader>gcm :Git commit -am ""<LEFT>
 map <Leader>gp :Git push<CR>
 map <Leader>gu :Git pull<CR>
+map <Leader>gst Git status<CR>
 map <Leader>g Git 
 " Add new line on enter
 map <S-CR> mnO<Esc>`n
