@@ -49,7 +49,7 @@ set autowrite
 
 augroup myfiletypes
 	autocmd!
-	autocmd FileType coffee,ruby,eruby,yaml set ai sw=2 sts=2 et
+	autocmd FileType slim,coffee,ruby,eruby,yaml set ai sw=2 sts=2 et
 augroup END
 
 " Ruby Complete
@@ -65,6 +65,10 @@ map <Leader>cn :vsplit ~/Dropbox/notes/coding-notes.txt<cr>
 map <Leader>vc :vsplit ~/Dropbox/notes/vim-cheat.txt<cr>
 map <Leader>ff mfgg=G`fzz
 map <Leader>fl 0=$
+map <Leader>t <C-p>
+map <Leader>w :w<CR>
+map <Leader>W :w !sudo tee % > /dev/null<CR>
+map <Leader>x :x<CR>
 map <Leader>e a<% x %><Esc>Fxxi
 map <Leader>e= a<%= x %><Esc>Fxxi
 map <Leader>el a<%= f.label x %><Esc>Fxxi
@@ -91,6 +95,8 @@ map <S-CR> mnO<Esc>`n
 map <CR> mno<Esc>`n
 map <TAB> ==
 vmap <TAB> =
+vnoremap > ><CR>gv 
+vnoremap < <<CR>gv
 
 " Other settings
 let g:ctrlp_custom_ignore = '\v\.(jpeg|jpg|JPG|png)$'
