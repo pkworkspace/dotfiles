@@ -34,6 +34,7 @@ Bundle 'kchmck/vim-coffee-script'
 " Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Yggdroot/indentLine'
 " Bundle 'airblade/vim-gitgutter' # Makes everything slow i think.
+Bundle 'terryma/vim-multiple-cursors'
 
 
 " Makes it so I can select within ruby blocks
@@ -58,7 +59,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 highlight Pmenu ctermbg=238 gui=bold
 
 " Key Bindings
-let g:EasyMotion_leader_key = ";" 
 let mapleader = ","
 map <Leader>n :NERDTreeToggle<cr>
 map <Leader>cn :vsplit ~/Dropbox/notes/coding-notes.txt<cr>
@@ -69,6 +69,8 @@ map <Leader>t <C-p>
 map <Leader>w :w<CR>
 map <Leader>W :w !sudo tee % > /dev/null<CR>
 map <Leader>x :x<CR>
+map <Leader>q :q<CR>
+map <Leader>Q :q!<CR>
 map <Leader>e a<% x %><Esc>Fxxi
 map <Leader>e= a<%= x %><Esc>Fxxi
 map <Leader>el a<%= f.label x %><Esc>Fxxi
@@ -90,6 +92,29 @@ map <Leader>gp :Git push<CR>
 map <Leader>gu :Git pull<CR>
 map <Leader>gst Git status<CR>
 map <Leader>g Git 
+
+" Toggles relativenumber on and off.
+function! RelativeNumberToggle()
+	if(&relativenumber == 1)
+		set number
+		set norelativenumber
+	else
+		set relativenumber
+	endif
+endfunction
+
+map <Leader>r :call RelativeNumberToggle()<CR>
+
+" window movements
+map <Leader>j <C-w>j
+map <Leader>k <C-w>k
+map <Leader>h <C-w>h
+map <Leader>l <C-w>l
+map <Leader>J <C-w>J
+map <Leader>K <C-w>K
+map <Leader>H <C-w>H
+map <Leader>L <C-w>L
+
 " Add new line on enter
 map <S-CR> mnO<Esc>`n
 map <CR> mno<Esc>`n
@@ -114,8 +139,14 @@ set antialias
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
-set backupdir=~/.vim/tmp,.
-set directory=~/.vim/tmp,.
+
+" turn backups and swaps off
+set nobackup  
+set nowritebackup 
+set noswapfile 
+" set backupdir=~/.vim/tmp,.
+" set directory=~/.vim/tmp,.
+
 " set shellcmdflag=-ic " Uses bash settings from terminal. This makes vim suspend on startup in terminal vim though.
 nnoremap gfv :vert winc f<cr>
 nnoremap gfx :winc f<cr>
